@@ -25,12 +25,18 @@
   </div>  
     <h1>Informacio</h1>
     <button type="button" onclick="mostrarInfo()">Mostrar informacio</button>
-    <p id="info">Navegador utilitzat</p>
-    <p id="versio">Versio navegador</p>
-    <p id="sistema">Sistema operatiu</p>
-    <p id="data">Data darrera modificacio</p>
-    <p id="idioma">Idioma</p>
-    <p id="url">Dades hosntame</p>
+    <p>Navegador utilitzat</p>
+    <p id="info"></p><br>
+    <p>Versio navegador</p>
+    <p id="versio"></p><br>
+    <p>Sistema operatiu</p>
+    <p id="sistema"></p><br>
+    <p>Data darrera modificacio</p>
+    <p id="data"></p><br>
+    <p>Idioma</p>
+    <p id="idioma"></p><br>
+    <p>Dades hosntame</p>
+    <p id="url"></p>
     <script>
         function mostrarInfo(){
             document.getElementById("info").innerHTML = navigator.userAgent;
