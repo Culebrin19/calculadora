@@ -31,40 +31,40 @@
     <input type="text" name="errors" id="errors" disabled><br>
 
     <br>
-    <button class="seven" value="7">7</button>
-    <button class="eight" value="8">8</button>
-    <button class="nine" value="9">9</button>
-    <button class="*" value="*" onclick="mutiplicar()">*</button>
+    <button id="seven" value="7">7</button>
+    <button id="eight" value="8">8</button>
+    <button id="nine" value="9">9</button>
+    <button id="*" value="*" onclick="mutiplicar()">*</button>
     <!-- 
         <input type="button" value="7">
         <input type="button" value="8">
         <input type="button" value="9">
         <input type="button" value="*" onclick="mutiplicar()"> -->
     <br>
-    <button class="four">4</button>
-    <button class="five">5</button>
-    <button class="six">6</button>
-    <button class="-" onclick="restar()">-</button>
+    <button id="four">4</button>
+    <button id="five">5</button>
+    <button id="six">6</button>
+    <button id="-" onclick="restar()">-</button>
 
     <!-- <input type="button" value="4">
         <input type="button" value="5">
         <input type="button" value="6">
         <input type="button" value="-" onclick="restar()"> -->
     <br>
-    <button class="one">1</button>
-    <button class="two">2</button>
-    <button class="three">3</button>
-    <button class="+" onclick="sumar()">+</button>
+    <button id="one">1</button>
+    <button id="two">2</button>
+    <button id="three">3</button>
+    <button id="+" onclick="sumar()">+</button>
 
     <!-- <input type="button" value="1">
         <input type="button" value="2">
         <input type="button" value="3">
         <input type="button" value="+" onclick="sumar()"> -->
     <br>
-    <button class="C">C</button>
-    <button class="0">0</button>
-    <button class="=">=</button>
-    <button class="/" onclick="dividir()">/</button>
+    <button id="C">C</button>
+    <button id="0">0</button>
+    <button id="=">=</button>
+    <button id="/" onclick="dividir()">/</button>
 
     <!-- <input type="button" value="C">
         <input type="button" value="0">
@@ -73,35 +73,42 @@
   </form>
 
   <script>
-    var torn; // boolean?
-    var num1 = 0;
-    var num2 = 2;
+    var error = document.getElementById("errors").value = "Prova d'error";
+    var torn = true; // boolean, si es fa click a una operacio, canvia de true (operador 1) a false (operador 2)
+    var operador1 = 0;
+    var operador2 = 0;
     var resultat = 0;
 
+    if(torn==true){
+      // utilitzar operador 1
+    }else{
+      // utilitzar operadro 2
+    }
+
     function sumar() {
-      num1 = document.getElementById().value;
-      num2 = document.getElementById().value;
+      operador1 = document.getElementById().value;
+      operador2 = document.getElementById().value;
 
       resultat = num1 + num2;
     }
 
     function restar() {
-      num1 = document.getElementById().value;
-      num2 = document.getElementById().value;
+      operador1 = document.getElementById().value;
+      operador2 = document.getElementById().value;
 
       resultat = num1 - num2;
     }
 
     function mutiplicar() {
-      num1 = document.getElementById().value;
-      num2 = document.getElementById().value;
+      operador1 = document.getElementById().value;
+      operador2 = document.getElementById().value;
 
       resultat = num1 * num2;
     }
 
     function dividir() {
-      num1 = document.getElementById().value;
-      num2 = document.getElementById().value;
+      operador1 = document.getElementById().value;
+      operador2 = document.getElementById().value;
 
       resultat = num1 / num2;
     }
