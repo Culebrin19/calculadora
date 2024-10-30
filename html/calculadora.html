@@ -23,28 +23,62 @@
       </div> 
     <h2>Calculadora</h2>
     <form name="calculadora">
-        <input type="text" name="calculadora" id="calculadora">
+        <input type="text" name="calculadora" id="calculadora" disabled>
         <br>
         <input type="button" value="7">
         <input type="button" value="8">
         <input type="button" value="9">
-        <input type="button" value="*">
+        <input type="button" value="*" onclick="mutiplicar()">
         <br>
         <input type="button" value="4">
         <input type="button" value="5">
         <input type="button" value="6">
-        <input type="button" value="-">
+        <input type="button" value="-" onclick="restar()">
         <br>
         <input type="button" value="1">
         <input type="button" value="2">
         <input type="button" value="3">
-        <input type="button" value="+">
+        <input type="button" value="+" onclick="sumar()">
         <br>
         <input type="button" value="C">
         <input type="button" value="0">
         <input type="button" value="=">
-        <input type="button" value="/">
+        <input type="button" value="/" onclick="dividir()">
     </form>
+
+    <script>
+      var num1 = 0;
+      var num2= 2;
+      var resultat = 0;
+
+      function sumar(){
+        num1 = document.getElementById().value;
+        num2 = document.getElementById().value;
+
+        resultat = num1+num2;
+      }
+
+      function restar(){
+        num1 = document.getElementById().value;
+        num2 = document.getElementById().value;
+
+        resultat = num1+num2;
+      }
+
+      function mutiplicar(){
+        num1 = document.getElementById().value;
+        num2 = document.getElementById().value;
+
+        resultat = num1+num2;
+      }
+
+      function dividir(){
+        num1 = document.getElementById().value;
+        num2 = document.getElementById().value;
+
+        resultat = num1+num2;
+      }
+    </script>
 
     <!-- Es millor utilitzar strings per a que sigui més fàçil concatenar -->
 
