@@ -1,89 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Page Title</title>
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A brief page description">
-    <meta name="keywords" content="html,cheatsheet" />
-    <meta property="fb:admins" content="YourFacebookUsername" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="/styles.css">
-    <script src="/script.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
-</head> 
-<body> 
-    <div class="menu">
-        <ul>
-          <li><a href="../index.html">Index</a></li>
-          <li><a href="calculadora.html">Calculadora</a></li>
-          <li><a href="informacio.html">Informacio</a></li>
-        </ul>
-      </div> 
-    <h2>Calculadora</h2>
-    <form name="calculadora">
-        <input type="text" name="calculadora" id="calculadora" disabled>
-        <br>
+
+<head>
+  <meta charset="utf-8">
+  <title>Page Title</title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A brief page description">
+  <meta name="keywords" content="html,cheatsheet" />
+  <meta property="fb:admins" content="YourFacebookUsername" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/normalized.css">
+  <link rel="stylesheet" href="/css/calculadora.css">
+  <script src="/script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="menu">
+    <ul>
+      <li><a href="../index.html">Index</a></li>
+      <li><a href="calculadora.html">Calculadora</a></li>
+      <li><a href="informacio.html">Informacio</a></li>
+    </ul>
+  </div>
+  <h2 id="titol">Calculadora</h2>
+  <form name="calculadora">
+
+    <input type="text" name="resultat" id="resultat" disabled><br><br>
+    <input type="text" name="errors" id="errors" disabled><br>
+
+    <br>
+    <button class="seven" value="7">7</button>
+    <button class="eight" value="8">8</button>
+    <button class="nine" value="9">9</button>
+    <button class="*" value="*" onclick="mutiplicar()">*</button>
+    <!-- 
         <input type="button" value="7">
         <input type="button" value="8">
         <input type="button" value="9">
-        <input type="button" value="*" onclick="mutiplicar()">
-        <br>
-        <input type="button" value="4">
+        <input type="button" value="*" onclick="mutiplicar()"> -->
+    <br>
+    <button class="four">4</button>
+    <button class="five">5</button>
+    <button class="six">6</button>
+    <button class="-" onclick="restar()">-</button>
+
+    <!-- <input type="button" value="4">
         <input type="button" value="5">
         <input type="button" value="6">
-        <input type="button" value="-" onclick="restar()">
-        <br>
-        <input type="button" value="1">
+        <input type="button" value="-" onclick="restar()"> -->
+    <br>
+    <button class="one">1</button>
+    <button class="two">2</button>
+    <button class="three">3</button>
+    <button class="+" onclick="sumar()">+</button>
+
+    <!-- <input type="button" value="1">
         <input type="button" value="2">
         <input type="button" value="3">
-        <input type="button" value="+" onclick="sumar()">
-        <br>
-        <input type="button" value="C">
+        <input type="button" value="+" onclick="sumar()"> -->
+    <br>
+    <button class="C">C</button>
+    <button class="0">0</button>
+    <button class="=">=</button>
+    <button class="/" onclick="dividir()">/</button>
+
+    <!-- <input type="button" value="C">
         <input type="button" value="0">
         <input type="button" value="=">
-        <input type="button" value="/" onclick="dividir()">
-    </form>
+        <input type="button" value="/" onclick="dividir()"> -->
+  </form>
 
-    <script>
-      var num1 = 0;
-      var num2= 2;
-      var resultat = 0;
+  <script>
+    var torn; // boolean?
+    var num1 = 0;
+    var num2 = 2;
+    var resultat = 0;
 
-      function sumar(){
-        num1 = document.getElementById().value;
-        num2 = document.getElementById().value;
+    function sumar() {
+      num1 = document.getElementById().value;
+      num2 = document.getElementById().value;
 
-        resultat = num1+num2;
-      }
+      resultat = num1 + num2;
+    }
 
-      function restar(){
-        num1 = document.getElementById().value;
-        num2 = document.getElementById().value;
+    function restar() {
+      num1 = document.getElementById().value;
+      num2 = document.getElementById().value;
 
-        resultat = num1-num2;
-      }
+      resultat = num1 - num2;
+    }
 
-      function mutiplicar(){
-        num1 = document.getElementById().value;
-        num2 = document.getElementById().value;
+    function mutiplicar() {
+      num1 = document.getElementById().value;
+      num2 = document.getElementById().value;
 
-        resultat = num1*num2;
-      }
+      resultat = num1 * num2;
+    }
 
-      function dividir(){
-        num1 = document.getElementById().value;
-        num2 = document.getElementById().value;
+    function dividir() {
+      num1 = document.getElementById().value;
+      num2 = document.getElementById().value;
 
-        resultat = num1/num2;
-      }
-    </script>
+      resultat = num1 / num2;
+    }
+  </script>
 
-    <!-- Es millor utilitzar strings per a que sigui més fàçil concatenar -->
+  <!-- Es millor utilitzar strings per a que sigui més fàçil concatenar -->
 
-    <!-- ficar id i onclick als numeros i operacions -->
-     <!-- DADES A FICAR  (per guardar les dades)
+  <!-- ficar id i onclick als numeros i operacions -->
+  <!-- DADES A FICAR  (per guardar les dades)
       var Calculadora{      OBJECTE
             OperadorUn
             OperadorDos
@@ -116,7 +143,7 @@
         }
       } -->
 
-      <!-- functions gestionarSuma(){
+  <!-- functions gestionarSuma(){
 
       } 
       
@@ -124,14 +151,14 @@
                 se li passa per parametres si serà suma, resta...
           }-->
 
-      <!-- function calcularResultar(){
+  <!-- function calcularResultar(){
             _comprobar Op 1 
             _comprobar Op 2 
             _comprobar Op 3 
             _Fem operacio 
       } -->
 
-      <!-- function esborrarTot(){
+  <!-- function esborrarTot(){
             torn=0 => OperadorUn=null o = 0 
       } 
             
@@ -139,11 +166,12 @@
             torn=0 => esborrar l'ultim numero depenent del torn que sigui, si operador 1 o 2
           }-->
 
-          <!-- 3 botons
+  <!-- 3 botons
            
               Guardar memoria =>
               Esborrar memoria => MC
               Recuperar memoria = MR
           -->
-</body> 
-</html> 
+</body>
+
+</html>

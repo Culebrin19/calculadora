@@ -1,0 +1,35 @@
+#errors{
+    border-color: red;
+    border: 2px solid red;
+    width: 80%;
+    height: 4rem;
+    margin-left: 2rem;
+}
+
+#resultat{
+    border: 2px solid aqua;
+    width: 80%;
+    height: 3rem;
+    margin-left: 2rem;
+}
+
+form{
+    border: 3px solid black;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 20%;
+    margin-left: 35rem;
+}
+
+#titol{
+    margin-left: 35rem;
+}
+
+.seven, .four, .one, .C{
+    margin-left: 2.5rem;
+} 
+
+button{
+    margin-left: 1rem;
+    padding: 1rem;
+}
