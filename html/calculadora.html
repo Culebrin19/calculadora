@@ -31,9 +31,9 @@
     <input type="text" name="errors" id="errors" disabled><br>
 
     <br>
-    <button id="seven" value="7">7</button>
-    <button id="eight" value="8">8</button>
-    <button id="nine" value="9">9</button>
+    <button id="seven" value="7" onclick="ingressarNumero(7)">7</button>
+    <button id="eight" value="8" onclick="ingressarNumero(8)">8</button>
+    <button id="nine" value="9" onclick="ingressarNumero(9)">9</button>
     <button id="*" value="*" onclick="mutiplicar()">*</button>
     <!-- 
         <input type="button" value="7">
@@ -41,9 +41,9 @@
         <input type="button" value="9">
         <input type="button" value="*" onclick="mutiplicar()"> -->
     <br>
-    <button id="four">4</button>
-    <button id="five">5</button>
-    <button id="six">6</button>
+    <button id="four" onclick="ingressarNumero(4)">4</button>
+    <button id="five" onclick="ingressarNumero(5)">5</button>
+    <button id="six" onclick="ingressarNumero(6)">6</button>
     <button id="-" onclick="restar()">-</button>
 
     <!-- <input type="button" value="4">
@@ -51,9 +51,9 @@
         <input type="button" value="6">
         <input type="button" value="-" onclick="restar()"> -->
     <br>
-    <button id="one">1</button>
-    <button id="two">2</button>
-    <button id="three">3</button>
+    <button id="one" onclick="ingressarNumero(1)">1</button>
+    <button id="two" onclick="ingressarNumero(2)">2</button>
+    <button id="three" onclick="ingressarNumero(3)">3</button>
     <button id="+" onclick="sumar()">+</button>
 
     <!-- <input type="button" value="1">
@@ -61,7 +61,7 @@
         <input type="button" value="3">
         <input type="button" value="+" onclick="sumar()"> -->
     <br>
-    <button id="C">C</button>
+    <button id="C" onclick="esborrar()">C</button>
     <button id="0">0</button>
     <button id="=">=</button>
     <button id="/" onclick="dividir()">/</button>
@@ -78,39 +78,38 @@
     var operador1 = 0;
     var operador2 = 0;
     var resultat = 0;
+    var operacio = "";
 
-    if(torn==true){
+    if (torn == true) {
       // utilitzar operador 1
-    }else{
+    } else {
       // utilitzar operadro 2
     }
 
-    function sumar() {
-      operador1 = document.getElementById().value;
-      operador2 = document.getElementById().value;
 
-      resultat = num1 + num2;
+    function ingresarNumero() {
+      if (torn == true) {
+        operador1 = document.getElementById().value;  // veure que ficar dins del parentesi
+      } else {
+        operador2 = document.getElementById().value;  // veure que ficar dins del parentesi
+      }
     }
 
-    function restar() {
-      operador1 = document.getElementById().value;
-      operador2 = document.getElementById().value;
-
-      resultat = num1 - num2;
+    function calcular() {
+      if (operacio == "sumar") {
+        resultat = operador1 + operador2;
+      } else if (operacio == "restar") {
+        resultat = operador1 - operador2;
+      } else if (operacio == "multiplicar") {
+        resultat = operador1 * operador2;
+      } else if (operacio == "dividir") {
+        resultat = operador1 / operador2;
+      }
     }
 
-    function mutiplicar() {
-      operador1 = document.getElementById().value;
-      operador2 = document.getElementById().value;
-
-      resultat = num1 * num2;
-    }
-
-    function dividir() {
-      operador1 = document.getElementById().value;
-      operador2 = document.getElementById().value;
-
-      resultat = num1 / num2;
+    function esborrar() {
+      operador1 = 0;
+      operador2 = 0;
     }
   </script>
 
