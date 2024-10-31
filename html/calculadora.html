@@ -73,36 +73,33 @@
   </form>
 
   <script>
-    var error = document.getElementById("errors").value = "Prova d'error";
+    document.getElementById("errors").value = "Prova d'error";
     var torn = true; // boolean, si es fa click a una operacio, canvia de true (operador 1) a false (operador 2)
     var operador1 = 0;
     var operador2 = 0;
     var resultat = 0;
     var operacio = "";
 
-    if (torn == true) {
-      // utilitzar operador 1
-    } else {
-      // utilitzar operadro 2
-    }
 
-
-    function ingresarNumero() {
+    function ingressarNumero(parametreNumero) {
+      console.log("hola");
       if (torn == true) {
-        operador1 = document.getElementById().value;  // veure que ficar dins del parentesi
+        operador1=operador1+parametreNumero.tostring();
+        document.getElementById("resultat").value=operador1;  // veure que ficar dins del parentesi
       } else {
-        operador2 = document.getElementById().value;  // veure que ficar dins del parentesi
+        operador2=operador2+parametreNumero.tostring();
+        document.getElementById("resultat").value=operador2;  // veure que ficar dins del parentesi
       }
     }
 
     function calcular() {
-      if (operacio == "sumar") {
+      if (operacio == "+") {
         resultat = operador1 + operador2;
-      } else if (operacio == "restar") {
+      } else if (operacio == "-") {
         resultat = operador1 - operador2;
-      } else if (operacio == "multiplicar") {
+      } else if (operacio == "*") {
         resultat = operador1 * operador2;
-      } else if (operacio == "dividir") {
+      } else if (operacio == "/") {
         resultat = operador1 / operador2;
       }
     }
