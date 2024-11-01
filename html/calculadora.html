@@ -12,7 +12,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="/css/normalized.css">
   <link rel="stylesheet" href="/css/calculadora.css">
-  <script src="/script.js"></script>
+  <script src="/js/script.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 </head>
 
@@ -31,9 +31,9 @@
     <input type="text" name="errors" id="errors" disabled><br>
 
     <br>
-    <button id="seven" value="7" onclick="ingressarNumero(7)">7</button>
-    <button id="eight" value="8" onclick="ingressarNumero(8)">8</button>
-    <button id="nine" value="9" onclick="ingressarNumero(9)">9</button>
+    <button id="seven" value="7" onclick="tracarSet()">7</button>
+    <button id="eight" value="8" onclick="tractarVuit()">8</button>
+    <button id="nine" value="9" onclick="tractarNou()">9</button>
     <button id="*" value="*" onclick="mutiplicar()">*</button>
     <!-- 
         <input type="button" value="7">
@@ -41,9 +41,9 @@
         <input type="button" value="9">
         <input type="button" value="*" onclick="mutiplicar()"> -->
     <br>
-    <button id="four" onclick="ingressarNumero(4)">4</button>
-    <button id="five" onclick="ingressarNumero(5)">5</button>
-    <button id="six" onclick="ingressarNumero(6)">6</button>
+    <button id="four" onclick="tractarQuatre()">4</button>
+    <button id="five" onclick="tractarCinc()">5</button>
+    <button id="six" onclick="tractarSis()">6</button>
     <button id="-" onclick="restar()">-</button>
 
     <!-- <input type="button" value="4">
@@ -51,9 +51,9 @@
         <input type="button" value="6">
         <input type="button" value="-" onclick="restar()"> -->
     <br>
-    <button id="one" onclick="ingressarNumero(1)">1</button>
-    <button id="two" onclick="ingressarNumero(2)">2</button>
-    <button id="three" onclick="ingressarNumero(3)">3</button>
+    <button id="one" onclick="tractarUn()">1</button>
+    <button id="two" onclick="tractarDos()">2</button>
+    <button id="three" onclick="tractarTres()">3</button>
     <button id="+" onclick="sumar()">+</button>
 
     <!-- <input type="button" value="1">
@@ -71,44 +71,6 @@
         <input type="button" value="=">
         <input type="button" value="/" onclick="dividir()"> -->
   </form>
-
-  <script>
-    document.getElementById("errors").value = "Prova d'error";
-    var torn = true; // boolean, si es fa click a una operacio, canvia de true (operador 1) a false (operador 2)
-    var operador1 = 0;
-    var operador2 = 0;
-    var resultat = 0;
-    var operacio = "";
-
-
-    function ingressarNumero(parametreNumero) {
-      console.log("hola");
-      if (torn == true) {
-        operador1=operador1+parametreNumero.tostring();
-        document.getElementById("resultat").value=operador1;  // veure que ficar dins del parentesi
-      } else {
-        operador2=operador2+parametreNumero.tostring();
-        document.getElementById("resultat").value=operador2;  // veure que ficar dins del parentesi
-      }
-    }
-
-    function calcular() {
-      if (operacio == "+") {
-        resultat = operador1 + operador2;
-      } else if (operacio == "-") {
-        resultat = operador1 - operador2;
-      } else if (operacio == "*") {
-        resultat = operador1 * operador2;
-      } else if (operacio == "/") {
-        resultat = operador1 / operador2;
-      }
-    }
-
-    function esborrar() {
-      operador1 = 0;
-      operador2 = 0;
-    }
-  </script>
 
   <!-- Es millor utilitzar strings per a que sigui més fàçil concatenar -->
 
