@@ -25,52 +25,41 @@
     </ul>
   </div>
   <h2 id="titol">Calculadora</h2>
-  <form name="calculadora">
+  
+  <div class="calculadora">
 
     <input type="text" name="resultat" id="resultat" disabled><br><br>
     <input type="text" name="errors" id="errors" disabled><br>
 
+
     <br>
-    <button id="seven" value="7" onclick="tracarSet()">7</button>
+    <button id="seven" value="7" onclick="tractarSet()">7</button>
     <button id="eight" value="8" onclick="tractarVuit()">8</button>
     <button id="nine" value="9" onclick="tractarNou()">9</button>
-    <button id="*" value="*" onclick="mutiplicar()">*</button>
-    <!-- 
-        <input type="button" value="7">
-        <input type="button" value="8">
-        <input type="button" value="9">
-        <input type="button" value="*" onclick="mutiplicar()"> -->
+    <button id="*" value="*" onclick="calcular()">*</button>
+
+
     <br>
     <button id="four" onclick="tractarQuatre()">4</button>
     <button id="five" onclick="tractarCinc()">5</button>
     <button id="six" onclick="tractarSis()">6</button>
-    <button id="-" onclick="restar()">-</button>
+    <button id="-" onclick="calcular()">-</button>
 
-    <!-- <input type="button" value="4">
-        <input type="button" value="5">
-        <input type="button" value="6">
-        <input type="button" value="-" onclick="restar()"> -->
+
     <br>
     <button id="one" onclick="tractarUn()">1</button>
     <button id="two" onclick="tractarDos()">2</button>
     <button id="three" onclick="tractarTres()">3</button>
-    <button id="+" onclick="sumar()">+</button>
+    <button id="+" onclick="calcular()">+</button>
 
-    <!-- <input type="button" value="1">
-        <input type="button" value="2">
-        <input type="button" value="3">
-        <input type="button" value="+" onclick="sumar()"> -->
+
     <br>
     <button id="C" onclick="esborrar()">C</button>
     <button id="0">0</button>
     <button id="=">=</button>
-    <button id="/" onclick="dividir()">/</button>
+    <button id="/" onclick="calcular()">/</button>
 
-    <!-- <input type="button" value="C">
-        <input type="button" value="0">
-        <input type="button" value="=">
-        <input type="button" value="/" onclick="dividir()"> -->
-  </form>
+  </div>
 
   <!-- Es millor utilitzar strings per a que sigui més fàçil concatenar -->
 
