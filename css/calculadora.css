@@ -38,3 +38,14 @@ button{
     margin-left: 1rem;
     padding: 1rem;
 }
+
+#moureHistorial{
+    padding: 1rem;
+}
+.menu ul{
+    display: flex;
+    list-style-type: none;
+}
+.menu li{
+    padding-left: 1rem;
+}

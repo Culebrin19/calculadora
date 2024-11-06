@@ -19,9 +19,11 @@
 <body>
   <div class="menu">
     <ul>
+      <button id="moureHistorial" onclick="goBack()">Historial enrere</button>
       <li><a href="../index.html">Index</a></li>
       <li><a href="calculadora.html">Calculadora</a></li>
       <li><a href="informacio.html">Informacio</a></li>
+      <button id="moureHistorial" onclick="goForwardk()">Historial endavant</button>
     </ul>
   </div>
   <h2 id="titol">Calculadora</h2>
@@ -36,30 +38,36 @@
     <button id="seven" value="7" onclick="tractarSet()">7</button>
     <button id="eight" value="8" onclick="tractarVuit()">8</button>
     <button id="nine" value="9" onclick="tractarNou()">9</button>
-    <button id="*" value="*" onclick="calcular()">*</button>
+    <button id="*" value="*" onclick="opcio()">*</button>
+      <!-- Mirar si cridar la funcio canviarTorn o es millor ficar
+       a cada operador el seu propi: sumar(), restar()... -->
 
 
     <br>
     <button id="four" onclick="tractarQuatre()">4</button>
     <button id="five" onclick="tractarCinc()">5</button>
     <button id="six" onclick="tractarSis()">6</button>
-    <button id="-" onclick="calcular()">-</button>
+    <button id="-" value="-" onclick="opcio()">-</button>
 
 
     <br>
     <button id="one" onclick="tractarUn()">1</button>
     <button id="two" onclick="tractarDos()">2</button>
     <button id="three" onclick="tractarTres()">3</button>
-    <button id="+" onclick="calcular()">+</button>
+    <button id="+" value="+" onclick="opcio()">+</button>
 
 
     <br>
     <button id="C" onclick="esborrar()">C</button>
     <button id="0" onclick="tractarZero()">0</button>
     <button id="=" onclick="resultat()">=</button>
-    <button id="/" onclick="calcular()">/</button>
+    <button id="/" value="/" onclick="opcio()">/</button>
 
   </div>
+
+  <!-- SI DONA ERROR, S'HA DE MOSTRAR ERROR I CORRETGIR, PERO HA DE PERMETR FER-HO -->
+
+  <!-- MAX LENGTH= 5 -->
 
   <!-- Es millor utilitzar strings per a que sigui més fàçil concatenar -->
 
