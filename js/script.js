@@ -30,7 +30,7 @@ function errors() {
 }
 
 function opcio(parametreOperacio){
-  opcio=parametreOperacio;
+  operacio=parametreOperacio;
   torn = !torn;
 }
 
@@ -39,19 +39,42 @@ function calcular(){ // Mirar que ficar en les condicions, perque no igualo cap 
   let numero1 = parseFloat(operador1);
   let numero2= parseFloat(operador2);
 
-  if(operacio=="+"){
-   resultat = numero1 + numero2;
-  }else if(operacio == "-"){
-    resultat = numero1 - numero2;
-  }else if(opcio == "*"){
-    resultat = numero1 * numero2;
-  }else{
-    resultat = numero1 / numero2;
+  // NO ACABA DE FUNCIONAR AMB IF
+
+  // if(operacio=="+"){
+  //  resultat = numero1 + numero2;
+  // }else if(operacio == "-"){
+  //   resultat = numero1 - numero2;
+  // }else if(operacio == "*"){
+  //   resultat = numero1 * numero2;
+  // }else{
+  //   resultat = numero1 / numero2;
+  // }
+
+  switch(operacio){
+    case "+":
+      resultat = numero1 + numero2;
+      break;
+    case "-":
+      resultat = numero1 - numero2;
+      break;
+    case "*":
+      resultat = numero1 * numero2;
+      break;
+    case "/":
+      resultat = numero1 / numero2;
+      break;
   }
 
   document.getElementById("resultat").value=resultat;
 
   // canviarTorn();
+}
+
+function mostrarResultat(){
+  calcular();
+  torn = true;  // per a que comenci amb el primer operador
+  operacio ="";
 }
 
 
@@ -180,10 +203,6 @@ function tractarZero() {
 }
 
 
-function resultat(){
-  resultat = operador1 + operador2;
-  document.getElementById("resultat").value=resultat;
-}
 
 // function resultat(){
 //   pantalla = document.getElementById("resultat");
@@ -193,8 +212,10 @@ function resultat(){
 function esborrar() {
   operador1 = "";
   operador2 = "";
+  operacio = "";
+  torn = true;
 
-  pantalla.value = "";
+  document.getElementById(resultat).value = "0";
 }
 
 function goBack() {
