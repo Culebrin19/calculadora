@@ -44,6 +44,7 @@ function errors(missatge) {
 function opcio(parametreOperacio){
   operacio=parametreOperacio;
   torn = !torn;
+  // document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
 }
 
 
@@ -122,6 +123,7 @@ function tractarUn() {
     }
     operador1 = operador1 + "1";
     resultat = document.getElementById("resultat").value = operador1;
+    document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
   } else {
     if(operador2.length >= 6){
       errors("Massa digits");
@@ -129,6 +131,7 @@ function tractarUn() {
      }
     operador2 = operador2 + "1";
     resultat = document.getElementById("resultat").value = operador2;
+    document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
   }
 }
 
@@ -140,6 +143,7 @@ function tractarDos() {
      }
     operador1 = operador1 + "2";
     pantalla = document.getElementById("resultat").value = operador1;
+    document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
   } else {
     if(operador2.length >= 6){
       errors("Massa digits");
@@ -147,6 +151,7 @@ function tractarDos() {
      }
     operador2 = operador2 + "2";
     resultat = document.getElementById("resultat").value = operador2;
+    document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
   }
 }
 
@@ -307,7 +312,11 @@ function esborrar() {
   operacio = "";
   torn = true;
 
-  document.getElementById(resultat).value = "0";
+  document.getElementById("resultat").value = "0";
+}
+
+function esborrarUltim() {
+
 }
 
 function goBack() {
