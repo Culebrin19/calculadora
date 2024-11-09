@@ -28,7 +28,7 @@
   </div>
   <h2 id="titol">Calculadora</h2>
 
-  <div class="calculadora">
+  <div class="calculadora" onload="mostrarZero()">
 
     <input type="text" name="resultat" id="resultat" disabled><br><br>
     <input type="text" name="errors" id="errors" disabled><br>
@@ -38,7 +38,7 @@
     <button id="seven" value="7" onclick="tractarSet()">7</button>
     <button id="eight" value="8" onclick="tractarVuit()">8</button>
     <button id="nine" value="9" onclick="tractarNou()">9</button>
-    <button id="*" value="*" onclick="opcio()">*</button>
+    <button id="*" value="*" onclick="opcio('*')">*</button>
       <!-- Mirar si cridar la funcio canviarTorn o es millor ficar
        a cada operador el seu propi: sumar(), restar()... -->
 
@@ -47,21 +47,21 @@
     <button id="four" onclick="tractarQuatre()">4</button>
     <button id="five" onclick="tractarCinc()">5</button>
     <button id="six" onclick="tractarSis()">6</button>
-    <button id="-" value="-" onclick="opcio()">-</button>
+    <button id="-" value="-" onclick="opcio('-')">-</button>
 
 
     <br>
     <button id="one" onclick="tractarUn()">1</button>
     <button id="two" onclick="tractarDos()">2</button>
     <button id="three" onclick="tractarTres()">3</button>
-    <button id="+" value="+" onclick="opcio()">+</button>
+    <button id="+" value="+" onclick="opcio('+')">+</button>
 
 
     <br>
     <button id="C" onclick="esborrar()">C</button>
     <button id="0" onclick="tractarZero()">0</button>
     <button id="=" onclick="resultat()">=</button>
-    <button id="/" value="/" onclick="opcio()">/</button>
+    <button id="/" value="/" onclick="opcio('/')">/</button>
 
   </div>
 

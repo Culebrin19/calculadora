@@ -16,7 +16,6 @@ var valorInicial = 0;
 // TAMBÉ QUE AL FER CLICK A UNA OPERACIO NO ES BORRIN ELS VALORS DE L'ALTRE OPERANT
 // FALTA QUE AL FER CLICK A = MOSTRI EL RESULTAT
 
-mostrarZero();
 function mostrarZero() {
   document.getElementById("resultat").value = valorInicial; // MIRAR ON FICAR-HO DINS D'UNA FUNCIO
 }
@@ -24,51 +23,59 @@ function mostrarZero() {
 // errors();
 function errors() {
   document.getElementById("errors").value = "Prova d'error";
+  if(document.getElementById("resultat")){
+    
+  }
+}
+
+function opcio(parametreOperacio){
+  opcio=parametreOperacio;
+  torn = !torn;
 }
 
 
-function opcio(){ // Mirar que ficar en les condicions, perque no igualo cap valor
-  if(document.getElementById("+")){
-    operacio="+";
-    document.write("sumar");
-  }else if(document.getElementById("-")){
-    operacio="-";
-    document.write("restar");
-  }else if(document.getElementById("*")){
-    operacio="*";
-    document.write("mutiplicar");
-  }else if(document.getElementById("/")){
-    operacio="/";
-    document.write("dividir");
+function calcular(){ // Mirar que ficar en les condicions, perque no igualo cap valor
+  let numero1 = parseFloat(operador1);
+  let numero2= parseFloat(operador2);
+
+  if(operacio=="+"){
+   resultat = numero1 + numero2;
+  }else if(operacio == "-"){
+    resultat = numero1 - numero2;
+  }else if(opcio == "*"){
+    resultat = numero1 * numero2;
   }else{
-    console.error("Error de operador");
+    resultat = numero1 / numero2;
   }
-  canviarTorn();
+
+  document.getElementById("resultat").value=resultat;
+  
+  // canviarTorn();
 }
 
 
-function canviarTorn() {
-  // MIRAR COM INDICAR-LI A QUIN TIPUS D'OPERACIO ES FA CLICK
-  if (operacio == "+") {
-    torn = !torn;
-    document.getElementById("errors").value = "Prova d'error sumar";
-    // resultat = operador1 + operador2;
-  } else if (operacio == "-") {
-    torn = !torn;
-    document.getElementById("errors").value = "Prova d'error restar";
-    resultat = operador1 - operador2;
-  } else if (operacio == "*") {
-    torn = !torn;
-    document.getElementById("errors").value = "Prova d'error mutiplicar";
-    resultat = operador1 * operador2;
-  } else if (operacio == "/") {
-    torn = !torn;
-    document.getElementById("errors").value = "Prova d'error dividir";
-    resultat = operador1 / operador2;
-  }
-  // torn = !torn; // mirara si canvia el valor de torn al contrari
-  document.getElementById("resultat").value = resultat;
-}
+// function canviarTorn() {
+//   // MIRAR COM INDICAR-LI A QUIN TIPUS D'OPERACIO ES FA CLICK
+//   if (operacio == "+") {
+//     torn = !torn;
+//     document.getElementById("errors").value = "Prova d'error sumar";
+//     // resultat = operador1 + operador2;
+//   } else if (operacio == "-") {
+//     torn = !torn;
+//     document.getElementById("errors").value = "Prova d'error restar";
+//     resultat = operador1 - operador2;
+//   } else if (operacio == "*") {
+//     torn = !torn;
+//     document.getElementById("errors").value = "Prova d'error mutiplicar";
+//     resultat = operador1 * operador2;
+//   } else if (operacio == "/") {
+//     torn = !torn;
+//     document.getElementById("errors").value = "Prova d'error dividir";
+//     resultat = operador1 / operador2;
+//   }
+//   // torn = !torn; // mirara si canvia el valor de torn al contrari
+//   document.getElementById("resultat").value = resultat;
+// }
 
 
 function tractarUn() {
