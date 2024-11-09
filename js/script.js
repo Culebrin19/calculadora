@@ -18,11 +18,12 @@ var valorInicial = 0;
 
 function storage(){
   let nom = document.getElementById("nom").value;
-  let tipus= document.getElementById("calculadores").value;
+  let tipus= document.getElementById("tipusCalculadora").value;
 
   localStorage.setItem("valorInicial", nom);
   localStorage.setItem("tipusCalculadora", tipus);
   
+  alert("S'ha guardat el nom i el tipus de calculadora");
 }
 
 function mostrarZero() {

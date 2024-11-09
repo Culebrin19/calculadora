@@ -1,7 +1,14 @@
+#moureHistorial{
+    padding: 1rem;
+}
 .menu ul{
+    display: flex;
     list-style-type: none;
 }
-menu{
-    display:flex;
-    flex-direction:column;
-  }
+.menu li{
+    padding-left: 1rem;
+}
+button{
+    margin-left: 1rem;
+    padding: 1rem;
+}
