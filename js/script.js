@@ -16,6 +16,15 @@ var valorInicial = 0;
 // TAMBÉ QUE AL FER CLICK A UNA OPERACIO NO ES BORRIN ELS VALORS DE L'ALTRE OPERANT
 // FALTA QUE AL FER CLICK A = MOSTRI EL RESULTAT
 
+function storage(){
+  let nom = document.getElementById("nom").value;
+  let tipus= document.getElementById("calculadores").value;
+
+  localStorage.setItem("valorInicial", nom);
+  localStorage.setItem("tipusCalculadora", tipus);
+  
+}
+
 function mostrarZero() {
   document.getElementById("resultat").value = valorInicial; // MIRAR ON FICAR-HO DINS D'UNA FUNCIO
   
