@@ -1,4 +1,4 @@
-#errors{
+#errors {
     border-color: red;
     /* background-color: red; */
     color: black;
@@ -8,7 +8,7 @@
     margin-left: 2rem;
 }
 
-#resultat{
+#resultat {
     border: 2px solid black;
     background-color: black;
     color: white;
@@ -17,7 +17,7 @@
     margin-left: 2rem;
 }
 
-.calculadora{
+.calculadora {
     border: 3px solid black;
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -26,37 +26,49 @@
     background-color: antiquewhite;
 }
 
-#titol{
+#titol {
     margin-left: 35rem;
 }
 
-#seven, #four, #one, #C, #potencia, #decimals{
+#seven,
+#four,
+#one,
+#C,
+#decimals {
     margin-left: 2.5rem;
-} 
+}
 
-button{
+button {
     margin-left: 1rem;
     padding: 1rem;
 }
 
-#moureHistorial{
+#moureHistorial {
     padding: 1rem;
 }
-.menu ul{
+
+.menu ul {
     display: flex;
     list-style-type: none;
 }
-.menu li{
+
+.menu li {
     padding-left: 1rem;
 }
-.esborrarNormal{
+
+.esborrarNormal {
     margin-left: 10rem;
 }
 
-#normal{
+#normal {
     display: none;
 }
 
-#cientifica{
+#cientifica {
     display: none;
-}   
+}
+
+#C {
+    width: 45px;
+    text-align: center;
+}
