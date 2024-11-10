@@ -30,7 +30,7 @@
     margin-left: 35rem;
 }
 
-#seven, #four, #one, #C{
+#seven, #four, #one, #C, #potencia{
     margin-left: 2.5rem;
 } 
 
@@ -48,8 +48,4 @@ button{
 }
 .menu li{
     padding-left: 1rem;
-}
-
-#esborrar{
-    margin-left: 2.5rem;
 }

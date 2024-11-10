@@ -14,14 +14,11 @@ var valorInicial = 0;
 //   document.getElementById("resultat").value = operand1;
 // });
 
-// FALTA IMPRIMIR 0 AL INICI DE LA CALCULADORA
-// TAMBÉ QUE AL FER CLICK A UNA OPERACIO NO ES BORRIN ELS VALORS DE L'ALTRE OPERANT
-// FALTA QUE AL FER CLICK A = MOSTRI EL RESULTAT
 
 function mostrar() {
   const tipus = document.getElementById("tipusCalculadora").value;
   const nom = document.getElementById("nom").value;
-  localStorage.setItem("valorInicial", nom);
+  localStorage.setItem("nomUsuari", nom);
   localStorage.setItem("tipusCalculadora", tipus);
 
   if (tipus == "normal") {
@@ -122,6 +119,12 @@ function mostrarResultat() {
 //   document.getElementById("resultat").value = resultat;
 // }
 
+function potencia(){
+  let mostrar = document.getElementById("resultat").value;
+  let numero = parseFloat(mostrar.value);
+
+  mostrar.value = Math.pow(numero, 2);
+}
 
 function tractarUn() {
   if (torn) {
@@ -131,7 +134,7 @@ function tractarUn() {
     }
     operador1 = operador1 + "1";
     resultat = document.getElementById("resultat").value = operador1;
-    document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
+    document.getElementById("resultat").value = operador1 + " " + operacio;
   } else {
     if (operador2.length >= 6) {
       errors("Massa digits");
@@ -151,7 +154,7 @@ function tractarDos() {
     }
     operador1 = operador1 + "2";
     pantalla = document.getElementById("resultat").value = operador1;
-    document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
+    document.getElementById("resultat").value = operador1 + " " + operacio;
   } else {
     if (operador2.length >= 6) {
       errors("Massa digits");
@@ -171,6 +174,7 @@ function tractarTres() {
     }
     operador1 = operador1 + "3";
     resultat = document.getElementById("resultat").value = operador1;
+    document.getElementById("resultat").value = operador1 + " " + operacio;
   } else {
     if (operador2.length >= 6) {
       errors("Massa digits");
@@ -178,6 +182,7 @@ function tractarTres() {
     }
     operador2 = operador2 + "3";
     resultat = document.getElementById("resultat").value = operador2;
+    document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
   }
 }
 
@@ -189,6 +194,7 @@ function tractarQuatre() {
     }
     operador1 = operador1 + "4";
     resultat = document.getElementById("resultat").value = operador1;
+    document.getElementById("resultat").value = operador1 + " " + operacio;
   } else {
     if (operador2.length >= 6) {
       errors("Massa digits");
@@ -196,6 +202,7 @@ function tractarQuatre() {
     }
     operador2 = operador2 + "4";
     resultat = document.getElementById("resultat").value = operador2;
+    document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
   }
 }
 
@@ -207,6 +214,7 @@ function tractarCinc() {
     }
     operador1 = operador1 + "5";
     pantalla = document.getElementById("resultat").value = operador1;
+    document.getElementById("resultat").value = operador1 + " " + operacio;
   } else {
     if (operador2.length >= 6) {
       errors("Massa digits");
@@ -214,6 +222,7 @@ function tractarCinc() {
     }
     operador2 = operador2 + "5";
     pantalla = document.getElementById("resultat").value = operador2;
+    document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
   }
 }
 
@@ -225,6 +234,7 @@ function tractarSis() {
     }
     operador1 = operador1 + "6";
     pantalla = document.getElementById("resultat").value = operador1;
+    document.getElementById("resultat").value = operador1 + " " + operacio;
   } else {
     if (operador2.length >= 6) {
       errors("Massa digits");
@@ -232,6 +242,7 @@ function tractarSis() {
     }
     operador2 = operador2 + "6";
     pantalla = document.getElementById("resultat").value = operador2;
+    document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
   }
 }
 
@@ -243,6 +254,7 @@ function tractarSet() {
     }
     operador1 = operador1 + "7";
     pantalla = document.getElementById("resultat").value = operador1;
+    document.getElementById("resultat").value = operador1 + " " + operacio;
   } else {
     if (operador2.length >= 6) {
       errors("Massa digits");
@@ -250,6 +262,7 @@ function tractarSet() {
     }
     operador2 = operador2 + "7";
     pantalla = document.getElementById("resultat").value = operador2;
+    document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
   }
 }
 
@@ -261,6 +274,7 @@ function tractarVuit() {
     }
     operador1 = operador1 + "8";
     pantalla = document.getElementById("resultat").value = operador1;
+    document.getElementById("resultat").value = operador1 + " " + operacio;
   } else {
     if (operador2.length >= 6) {
       errors("Massa digits");
@@ -268,6 +282,7 @@ function tractarVuit() {
     }
     operador2 = operador2 + "8";
     pantalla = document.getElementById("resultat").value = operador2;
+    document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
   }
 }
 
@@ -278,7 +293,7 @@ function tractarNou() {
       return;
     }
     operador1 = operador1 + "9";
-    pantalla = document.getElementById("resultat").value = operador1;
+    document.getElementById("resultat").value = operador1 + " " + operacio;
   } else {
     if (operador2.length >= 6) {
       errors("Massa digits");
@@ -286,6 +301,7 @@ function tractarNou() {
     }
     operador2 = operador2 + "9";
     pantalla = document.getElementById("resultat").value = operador2;
+    document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
   }
 }
 
@@ -297,6 +313,7 @@ function tractarZero() {
     }
     operador1 = operador1 + "0";
     pantalla = document.getElementById("resultat").value = operador1;
+    document.getElementById("resultat").value = operador1 + " " + operacio;
   } else {
     if (operador2.length >= 6) {
       errors("Massa digits");
@@ -304,6 +321,7 @@ function tractarZero() {
     }
     operador2 = operador2 + "0";
     pantalla = document.getElementById("resultat").value = operador2;
+    document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
   }
 }
 
@@ -334,3 +352,4 @@ function goBack() {
 function goForward() {
   window.history.forward();
 }
+
