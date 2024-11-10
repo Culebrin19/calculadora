@@ -343,7 +343,13 @@ function esborrar() {
 }
 
 function esborrarUltim() {
-
+  if (torn) {
+    operador1=operador1.slice(0, -1);
+    document.getElementById("resultat").value = operador1;
+  } else {
+    operadro2=operador2.slice(0, -1);
+    document.getElementById("resultat").value = operador2;
+  }
 }
 
 function goBack() {
