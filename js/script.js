@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function () { // Imprimeix zero re
 
 
 function mostrar() {
-  const tipus = document.getElementById("tipusCalculadora").value;  // agafa el tipus de calculadora que s'ha escrit
-  const nom = document.getElementById("nom").value; // nom d'usuari
+  let tipus = document.getElementById("tipusCalculadora").value;  // agafa el tipus de calculadora que s'ha escrit
+  let nom = document.getElementById("nom").value; // nom d'usuari
 
   // crea un localStorage per a guardar els valors
   localStorage.setItem("nomUsuari", nom);
@@ -27,9 +27,9 @@ function mostrar() {
     window.location.href = "/html/calculadora.html";
   } else if (tipus == "cientifica") {
     window.location.href = "/html/calculadoraCientifica.html";
+  } else {
+    alert("Tipus de calculadora incorrecta");
   }
-
-  alert("Tipus de calculadora incorrecta");
 }
 
 document.addEventListener("DOMContentLoaded", function () { // al carregar la pàgina, mostra el num d'usuari
@@ -334,22 +334,22 @@ function tractarDecimals() {
   }
 }
 
-function guardar(){
+function guardar() {
   let guardat = document.getElementById("resultat").value;  // agafo lo que hi ha per pantalla
   let guardatNum = parseFloat(guardat); // passo de string a numero
   sessionStorage.setItem("guardat", guardatNum);  // ho guardo en sessionStorage
 }
 
-function mostrarValor(){
+function mostrarValor() {
   let valorGuardat = sessionStorage.getItem("guardat"); // agafo el valor guardat
-  if(valorGuardat != null || valorGuardat != " "){  // si no està buit, el mostro per pantalla
+  if (valorGuardat != null || valorGuardat != " ") {  // si no està buit, el mostro per pantalla
     document.getElementById("resultat").value = valorGuardat;
-  }else{
+  } else {
     errors("No hi ha cap valor guardat"); // si està buit, envio missatge d'error
   }
 }
 
-function esborrarValor(){
+function esborrarValor() {
   sessionStorage.removeItem("guardat"); // buido el sessionStorage
 }
 
