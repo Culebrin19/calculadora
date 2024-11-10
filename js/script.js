@@ -22,13 +22,16 @@ function mostrar() {
   localStorage.setItem("nomUsuari", nom);
   localStorage.setItem("tipusCalculadora", tipus);
 
-  if (tipus == "normal") {
-    window.location.href = "../html/calculadora.html";
-  } else if (tipus == "cientifica") {
-    window.location.href = "../html/calculadoraCientifica.html";
+  switch (tipus) {
+    case "normal":
+      window.location.href = "/html/calculadora.html";
+      break;
+    case "cientifica":
+      window.location.href = "/html/calculadoraCientifica.html";
+      break;
+    default:
+      alert("Tipus de calculadora incorrecta");
   }
-
-  alert("Tipus de calculadora incorrecta");
 }
 
 
@@ -120,7 +123,7 @@ function mostrarResultat() {
 //   document.getElementById("resultat").value = resultat;
 // }
 
-function potencia(){
+function potencia() {
   let mostrar = document.getElementById("resultat").value;
   let numero = parseFloat(mostrar.value);
 
@@ -344,10 +347,10 @@ function esborrar() {
 
 function esborrarUltim() {
   if (torn) {
-    operador1=operador1.slice(0, -1);
+    operador1 = operador1.slice(0, -1);
     document.getElementById("resultat").value = operador1;
   } else {
-    operadro2=operador2.slice(0, -1);
+    operadro2 = operador2.slice(0, -1);
     document.getElementById("resultat").value = operador2;
   }
 }
