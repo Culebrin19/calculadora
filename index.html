@@ -10,10 +10,30 @@
     <meta property="fb:admins" content="YourFacebookUsername" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="/styles.css">
-    <script src="/script.js"></script>
+    <script src="/js/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+    <link rel="stylesheet" href="css/normalized.css">
+    <link rel="stylesheet" href="css/index.css">
 </head> 
 <body> 
+  <div class="menu">
+    <ul>
+      <button id="moureHistorial" onclick="goBack()">Historial enrere</button>
+      <li><a href="./index.html">Index</a></li>
+      <li><a href="html/calculadora.html">Calculadora</a></li>
+      <li><a href="html/calculadoraCientifica.html">Calculadora Cientifica</a></li>
+      <li><a href="html/informacio.html">Informacio</a></li>
+      <button id="moureHistorial" onclick="goForward()">Historial endavant</button>
+    </ul>
+  </div>  
     <h1>Pàgina web feta per Harsh</h1>
+
+    <form action="">
+      <label for="nom">Fica tel teu nom</label><br>
+      <input type="text" id="nom" name="nom"><br>
+      <label for="tipusCalculadora">Selecciona la calculadora que vols</label><br>
+      <input type="text" id="tipusCalculadora" name="tipusCalculadora" placeholder="normal o cientifica">
+      <button type="button" onclick="mostrar()">Enviar</button>
+    </form>
 </body> 
 </html> 
