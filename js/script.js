@@ -50,7 +50,7 @@ function errors(missatge) {
 function opcio(parametreOperacio) {
   operacio = parametreOperacio;
   torn = !torn;
-  // document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
+  // document.getElementById("resultat").value = operacio ;
 }
 
 
@@ -139,6 +139,9 @@ function tractarUn() {
     if (operador1.length >= 6) {
       errors("Massa digits");
       return;
+    }
+    if(operador1=="++" || operador1=="--" || operador1=="**" || operador1=="//"){
+      errors("Systax error");
     }
     operador1 = operador1 + "1";
     resultat = document.getElementById("resultat").value = operador1;
