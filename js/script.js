@@ -24,7 +24,7 @@ function mostrar() {
   if (tipus == "normal") {
     window.location.href = "calculadora.html";
   } else if (tipus == "cientifica") {
-    window.location.href = "/html/calculadoraCientifica.html";
+    window.location.href = "../html/calculadoraCientifica.html";
   }
 
   alert("S'ha guardat el nom i el tipus de calculadora");
