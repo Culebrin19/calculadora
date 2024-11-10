@@ -30,6 +30,9 @@
   </div>
 
     <h2 id="titol">Calculadora Normal</h2>
+
+    <h1 id="usuari"></h1>
+
   <div class="calculadora" onload="mostrarZero()">
 
     <input type="text" name="resultat" id="resultat" disabled><br><br>
@@ -64,7 +67,8 @@
     <button id="/" value="/" onclick="opcio('/')">/</button>
 
     <br>
-    <button id="esborrar" onclick="esborrarUltim()">Esborrar</button>
+    <button id="decimals" value="." onclick="tractarDecimals()">.</button>
+    <button id="esborrar" onclick="esborrarUltim()">⌫</button>
 
   </div>
 
