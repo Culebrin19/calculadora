@@ -12,3 +12,14 @@ button{
     margin-left: 1rem;
     padding: 1rem;
 }
+.menu{
+    border-bottom: 10px solid black;
+    border-top: 10px solid black;
+    background-color: cadetblue;
+}
+body{
+    background-color: antiquewhite;
+}
+form{
+    padding-left: 2rem;
+}
