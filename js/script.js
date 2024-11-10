@@ -334,6 +334,25 @@ function tractarDecimals() {
   }
 }
 
+function guardar(){
+  let guardat = document.getElementById("resultat").value;  // agafo lo que hi ha per pantalla
+  let guardatNum = parseFloat(guardat); // passo de string a numero
+  sessionStorage.setItem("guardat", guardatNum);  // ho guardo en sessionStorage
+}
+
+function mostrarValor(){
+  let valorGuardat = sessionStorage.getItem("guardat"); // agafo el valor guardat
+  if(valorGuardat != null || valorGuardat != " "){  // si no està buit, el mostro per pantalla
+    document.getElementById("resultat").value = valorGuardat;
+  }else{
+    errors("No hi ha cap valor guardat"); // si està buit, envio missatge d'error
+  }
+}
+
+function esborrarValor(){
+  sessionStorage.removeItem("guardat"); // buido el sessionStorage
+}
+
 
 function esborrar() { // fico que totes les variables estiguin buides
   operador1 = "";
