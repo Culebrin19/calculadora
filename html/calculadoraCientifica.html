@@ -28,45 +28,47 @@
     </ul>
   </div>
 
-    <h2 id="titol">Calculadora Normal</h2>
-  <div class="calculadora" onload="mostrarZero()">
+  
+    <h2 id="titol">Calculadora Cientifica</h2>
+    <div class="calculadora" onload="mostrarZero()">
 
-    <input type="text" name="resultat" id="resultat" disabled><br><br>
-    <div id="errors"></div>
-
-
-    <br>
-    <button id="seven" value="7" onclick="tractarSet()">7</button>
-    <button id="eight" value="8" onclick="tractarVuit()">8</button>
-    <button id="nine" value="9" onclick="tractarNou()">9</button>
-    <button id="*" value="*" onclick="opcio('*')">*</button>
-
-
-    <br>
-    <button id="four" onclick="tractarQuatre()">4</button>
-    <button id="five" onclick="tractarCinc()">5</button>
-    <button id="six" onclick="tractarSis()">6</button>
-    <button id="-" value="-" onclick="opcio('-')">-</button>
-
-
-    <br>
-    <button id="one" onclick="tractarUn()">1</button>
-    <button id="two" onclick="tractarDos()">2</button>
-    <button id="three" onclick="tractarTres()">3</button>
-    <button id="+" value="+" onclick="opcio('+')">+</button>
-
-
-    <br>
-    <button id="C" onclick="esborrar()">C</button>
-    <button id="0" onclick="tractarZero()">0</button>
-    <button id="=" onclick="mostrarResultat()">=</button>
-    <button id="/" value="/" onclick="opcio('/')">/</button>
-
-    <br>
-    <button id="esborrar" onclick="esborrarUltim()">Esborrar</button>
-
-  </div>
-
+      <input type="text" name="resultat" id="resultat" disabled><br><br>
+      <div id="errors"></div>
+  
+  
+      <br>
+      <button id="seven" value="7" onclick="tractarSet()">7</button>
+      <button id="eight" value="8" onclick="tractarVuit()">8</button>
+      <button id="nine" value="9" onclick="tractarNou()">9</button>
+      <button id="*" value="*" onclick="opcio('*')">*</button>
+        <!-- Mirar si cridar la funcio canviarTorn o es millor ficar
+         a cada operador el seu propi: sumar(), restar()... -->
+  
+  
+      <br>
+      <button id="four" onclick="tractarQuatre()">4</button>
+      <button id="five" onclick="tractarCinc()">5</button>
+      <button id="six" onclick="tractarSis()">6</button>
+      <button id="-" value="-" onclick="opcio('-')">-</button>
+  
+  
+      <br>
+      <button id="one" onclick="tractarUn()">1</button>
+      <button id="two" onclick="tractarDos()">2</button>
+      <button id="three" onclick="tractarTres()">3</button>
+      <button id="+" value="+" onclick="opcio('+')">+</button>
+  
+  
+      <br>
+      <button id="C" onclick="esborrar()">C</button>
+      <button id="0" onclick="tractarZero()">0</button>
+      <button id="=" onclick="mostrarResultat()">=</button>
+      <button id="/" value="/" onclick="opcio('/')">/</button>
+  
+      <br>
+      <button id="esborrar" onclick="esborrarUltim()">Esborrar</button>
+  
+    </div>
 
   <!-- SI DONA ERROR, S'HA DE MOSTRAR ERROR I CORRETGIR, PERO HA DE PERMETR FER-HO -->
 

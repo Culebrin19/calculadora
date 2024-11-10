@@ -5,6 +5,8 @@ var resultat = 0;
 var operacio = "";
 var valorInicial = 0;
 
+
+
 // var operand1 = "0";
 
 // document.addEventListener("DOMContentLoaded", function () {
@@ -16,19 +18,25 @@ var valorInicial = 0;
 // TAMBÉ QUE AL FER CLICK A UNA OPERACIO NO ES BORRIN ELS VALORS DE L'ALTRE OPERANT
 // FALTA QUE AL FER CLICK A = MOSTRI EL RESULTAT
 
-function storage(){
-  let nom = document.getElementById("nom").value;
-  let tipus= document.getElementById("tipusCalculadora").value;
-
+function mostrar() {
+  const tipus = document.getElementById("tipusCalculadora").value;
+  const nom = document.getElementById("nom").value;
   localStorage.setItem("valorInicial", nom);
   localStorage.setItem("tipusCalculadora", tipus);
-  
+
+  if (tipus == "normal") {
+    window.location.href = `/html/calculadora.html?tipus=${tipus}`;
+  } else if (tipus == "cientifica") {
+    window.location.href = `/html/calculadoraCientifica.html?tipus=${tipus}`;
+  }
+
   alert("S'ha guardat el nom i el tipus de calculadora");
 }
 
+
 function mostrarZero() {
   document.getElementById("resultat").value = valorInicial; // MIRAR ON FICAR-HO DINS D'UNA FUNCIO
-  
+
 }
 
 // errors();
@@ -41,16 +49,16 @@ function errors(missatge) {
   document.getElementById("errors").innerText = missatge + ",fes enter a la URL per a poder continuar";
 }
 
-function opcio(parametreOperacio){
-  operacio=parametreOperacio;
+function opcio(parametreOperacio) {
+  operacio = parametreOperacio;
   torn = !torn;
   // document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
 }
 
 
-function calcular(){ // Mirar que ficar en les condicions, perque no igualo cap valor
+function calcular() { // Mirar que ficar en les condicions, perque no igualo cap valor
   let numero1 = parseFloat(operador1);
-  let numero2= parseFloat(operador2);
+  let numero2 = parseFloat(operador2);
 
   // NO ACABA DE FUNCIONAR AMB IF
 
@@ -64,7 +72,7 @@ function calcular(){ // Mirar que ficar en les condicions, perque no igualo cap 
   //   resultat = numero1 / numero2;
   // }
 
-  switch(operacio){
+  switch (operacio) {
     case "+":
       resultat = numero1 + numero2;
       break;
@@ -79,15 +87,15 @@ function calcular(){ // Mirar que ficar en les condicions, perque no igualo cap 
       break;
   }
 
-  document.getElementById("resultat").value=resultat;
+  document.getElementById("resultat").value = resultat;
 
   // canviarTorn();
 }
 
-function mostrarResultat(){
+function mostrarResultat() {
   calcular();
   torn = true;  // per a que comenci amb el primer operador
-  operacio ="";
+  operacio = "";
 }
 
 
@@ -117,18 +125,18 @@ function mostrarResultat(){
 
 function tractarUn() {
   if (torn) {
-    if(operador1.length >= 6){
-     errors("Massa digits");
+    if (operador1.length >= 6) {
+      errors("Massa digits");
       return;
     }
     operador1 = operador1 + "1";
     resultat = document.getElementById("resultat").value = operador1;
     document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
   } else {
-    if(operador2.length >= 6){
+    if (operador2.length >= 6) {
       errors("Massa digits");
-       return;
-     }
+      return;
+    }
     operador2 = operador2 + "1";
     resultat = document.getElementById("resultat").value = operador2;
     document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
@@ -137,18 +145,18 @@ function tractarUn() {
 
 function tractarDos() {
   if (torn) {
-    if(operador1.length >= 6){
+    if (operador1.length >= 6) {
       errors("Massa digits");
-       return;
-     }
+      return;
+    }
     operador1 = operador1 + "2";
     pantalla = document.getElementById("resultat").value = operador1;
     document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
   } else {
-    if(operador2.length >= 6){
+    if (operador2.length >= 6) {
       errors("Massa digits");
-       return;
-     }
+      return;
+    }
     operador2 = operador2 + "2";
     resultat = document.getElementById("resultat").value = operador2;
     document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
@@ -157,17 +165,17 @@ function tractarDos() {
 
 function tractarTres() {
   if (torn) {
-    if(operador1.length >= 6){
+    if (operador1.length >= 6) {
       errors("Massa digits");
-       return;
-     }
+      return;
+    }
     operador1 = operador1 + "3";
     resultat = document.getElementById("resultat").value = operador1;
   } else {
-    if(operador2.length >= 6){
+    if (operador2.length >= 6) {
       errors("Massa digits");
-       return;
-     }
+      return;
+    }
     operador2 = operador2 + "3";
     resultat = document.getElementById("resultat").value = operador2;
   }
@@ -175,17 +183,17 @@ function tractarTres() {
 
 function tractarQuatre() {
   if (torn) {
-    if(operador1.length >= 6){
+    if (operador1.length >= 6) {
       errors("Massa digits");
-       return;
-     }
+      return;
+    }
     operador1 = operador1 + "4";
     resultat = document.getElementById("resultat").value = operador1;
   } else {
-    if(operador2.length >= 6){
+    if (operador2.length >= 6) {
       errors("Massa digits");
-       return;
-     }
+      return;
+    }
     operador2 = operador2 + "4";
     resultat = document.getElementById("resultat").value = operador2;
   }
@@ -193,17 +201,17 @@ function tractarQuatre() {
 
 function tractarCinc() {
   if (torn) {
-    if(operador1.length >= 6){
+    if (operador1.length >= 6) {
       errors("Massa digits");
-       return;
-     }
+      return;
+    }
     operador1 = operador1 + "5";
     pantalla = document.getElementById("resultat").value = operador1;
   } else {
-    if(operador2.length >= 6){
+    if (operador2.length >= 6) {
       errors("Massa digits");
-       return;
-     }
+      return;
+    }
     operador2 = operador2 + "5";
     pantalla = document.getElementById("resultat").value = operador2;
   }
@@ -211,17 +219,17 @@ function tractarCinc() {
 
 function tractarSis() {
   if (torn) {
-    if(operador1.length >= 6){
+    if (operador1.length >= 6) {
       errors("Massa digits");
-       return;
-     }
+      return;
+    }
     operador1 = operador1 + "6";
     pantalla = document.getElementById("resultat").value = operador1;
   } else {
-    if(operador2.length >= 6){
+    if (operador2.length >= 6) {
       errors("Massa digits");
-       return;
-     }
+      return;
+    }
     operador2 = operador2 + "6";
     pantalla = document.getElementById("resultat").value = operador2;
   }
@@ -229,17 +237,17 @@ function tractarSis() {
 
 function tractarSet() {
   if (torn) {
-    if(operador1.length >= 6){
+    if (operador1.length >= 6) {
       errors("Massa digits");
-       return;
-     }
+      return;
+    }
     operador1 = operador1 + "7";
     pantalla = document.getElementById("resultat").value = operador1;
   } else {
-    if(operador2.length >= 6){
+    if (operador2.length >= 6) {
       errors("Massa digits");
-       return;
-     }
+      return;
+    }
     operador2 = operador2 + "7";
     pantalla = document.getElementById("resultat").value = operador2;
   }
@@ -247,17 +255,17 @@ function tractarSet() {
 
 function tractarVuit() {
   if (torn) {
-    if(operador1.length >= 6){
+    if (operador1.length >= 6) {
       errors("Massa digits");
-       return;
-     }
+      return;
+    }
     operador1 = operador1 + "8";
     pantalla = document.getElementById("resultat").value = operador1;
   } else {
-    if(operador2.length >= 6){
+    if (operador2.length >= 6) {
       errors("Massa digits");
-       return;
-     }
+      return;
+    }
     operador2 = operador2 + "8";
     pantalla = document.getElementById("resultat").value = operador2;
   }
@@ -265,17 +273,17 @@ function tractarVuit() {
 
 function tractarNou() {
   if (torn) {
-    if(operador1.length >= 6){
+    if (operador1.length >= 6) {
       errors("Massa digits");
-       return;
-     }
+      return;
+    }
     operador1 = operador1 + "9";
     pantalla = document.getElementById("resultat").value = operador1;
   } else {
-    if(operador2.length >= 6){
+    if (operador2.length >= 6) {
       errors("Massa digits");
-       return;
-     }
+      return;
+    }
     operador2 = operador2 + "9";
     pantalla = document.getElementById("resultat").value = operador2;
   }
@@ -283,17 +291,17 @@ function tractarNou() {
 
 function tractarZero() {
   if (torn) {
-    if(operador1.length >= 6){
+    if (operador1.length >= 6) {
       errors("Massa digits");
-       return;
-     }
+      return;
+    }
     operador1 = operador1 + "0";
     pantalla = document.getElementById("resultat").value = operador1;
   } else {
-    if(operador2.length >= 6){
+    if (operador2.length >= 6) {
       errors("Massa digits");
-       return;
-     }
+      return;
+    }
     operador2 = operador2 + "0";
     pantalla = document.getElementById("resultat").value = operador2;
   }
