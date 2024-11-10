@@ -18,16 +18,17 @@ var valorInicial = 0;
 function mostrar() {
   const tipus = document.getElementById("tipusCalculadora").value;
   const nom = document.getElementById("nom").value;
+
   localStorage.setItem("nomUsuari", nom);
   localStorage.setItem("tipusCalculadora", tipus);
 
   if (tipus == "normal") {
-    window.location.href = "/html/calculadora.html";
+    window.location.href = "../html/calculadora.html";
   } else if (tipus == "cientifica") {
-    window.location.href = "/html/calculadoraCientifica.html";
+    window.location.href = "../html/calculadoraCientifica.html";
   }
 
-  alert("S'ha guardat el nom i el tipus de calculadora");
+  alert("Tipus de calculadora incorrecta");
 }
 
 
