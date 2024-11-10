@@ -6,7 +6,6 @@ var operacio = "";
 var valorInicial = 0;
 
 
-
 var operand1 = "0";
 
 document.addEventListener("DOMContentLoaded", function () { // Imprimeix zero res mes carregar la pàgina
@@ -33,9 +32,15 @@ function mostrar() {
   alert("Tipus de calculadora incorrecta");
 }
 
+document.addEventListener("DOMContentLoaded", function () { // al carregar la pàgina, mostra el num d'usuari
+  let nomUsuari = localStorage.getItem("nomUsuari");
+  document.getElementById("usuari").innerHTML = "Usuari: " + nomUsuari;
+});
+
+
 
 function errors(missatge) { // li arriba per parametre el missatge d'error i mostra el missatge
-  document.getElementById("errors").innerText = missatge + ",fes enter a la URL per a poder continuar";
+  document.getElementById("errors").innerText = missatge + ",si no deixa continuar, fes enter a la URL per a poder continuar";
 }
 
 function opcio(parametreOperacio) { // li arriba per paramtre el valor que hia ficat dins de les funcions de opcio(), per exemple opcio("+") envia +
@@ -44,7 +49,7 @@ function opcio(parametreOperacio) { // li arriba per paramtre el valor que hia f
 }
 
 
-function calcular() { 
+function calcular() {
   let numero1 = parseFloat(operador1);  // agafa el valor de l'operador 1 i el converteix a float
   let numero2 = parseFloat(operador2);
 
@@ -86,15 +91,15 @@ function mostrarResultat() {
 }
 
 
-function potencia(){
-  let mostrar = document.getElementById("resultat");  
+function potencia() {
+  let mostrar = document.getElementById("resultat");
   let numero = parseFloat(mostrar.value); // guarda el valor de la pantalla a numero
 
   mostrar.value = Math.pow(numero, 2);  // eleva el numero a 2 hi ho mostra
 }
 
 // lo mateix que l'anterior funcio, pero fa la arrel quadrada
-function realQuadrada(){
+function realQuadrada() {
   let mostrar = document.getElementById("resultat");
   let numero = parseFloat(mostrar.value);
 
@@ -300,6 +305,35 @@ function tractarZero() {
   }
 }
 
+// el codi es el mateix que qualsevol altra funcio de tracticar, solament he afegit una condicio per saltar error
+function tractarDecimals() {
+  if (torn) {
+    if (operador1.includes(".")) { // si té un punt, envio missatje a errors() i faig return per parar
+      errors("Ja conté un punt");
+      return;
+    }
+    if (operador1.length >= 6) {
+      errors("Massa digits");
+      return;
+    }
+    operador1 = operador1 + ".";
+    pantalla = document.getElementById("resultat").value = operador1;
+    document.getElementById("resultat").value = operador1 + " " + operacio;
+  } else {
+    if (operador2.includes(".")) {
+      errors("Ja conté un punt");
+      return;
+    }
+    if (operador2.length >= 6) {
+      errors("Massa digits");
+      return;
+    }
+    operador2 = operador2 + ".";
+    pantalla = document.getElementById("resultat").value = operador2;
+    document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
+  }
+}
+
 
 function esborrar() { // fico que totes les variables estiguin buides
   operador1 = "";
@@ -312,10 +346,10 @@ function esborrar() { // fico que totes les variables estiguin buides
 
 function esborrarUltim() {  // fa casi lo mateix que la anterior funcio, solament que esborra l'ultim numero
   if (torn) {
-    operador1=operador1.slice(0, -1);
+    operador1 = operador1.slice(0, -1);
     document.getElementById("resultat").value = operador1;
   } else {
-    operadro2=operador2.slice(0, -1);
+    operador2 = operador2.slice(0, -1);
     document.getElementById("resultat").value = operador2;
   }
 }
