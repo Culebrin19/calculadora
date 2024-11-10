@@ -7,12 +7,12 @@ var valorInicial = 0;
 
 
 
-// var operand1 = "0";
+var operand1 = "0";
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   operand1 = "0";
-//   document.getElementById("resultat").value = operand1;
-// });
+document.addEventListener("DOMContentLoaded", function () {
+  operand1 = "0";
+  document.getElementById("resultat").value = operand1;
+});
 
 
 function mostrar() {
@@ -32,12 +32,6 @@ function mostrar() {
 }
 
 
-function mostrarZero() {
-  document.getElementById("resultat").value = valorInicial; // MIRAR ON FICAR-HO DINS D'UNA FUNCIO
-
-}
-
-// errors();
 function errors(missatge) {
   // let tornActual = operador1;
   // // document.getElementById("errors").value = "Prova d'error";
