@@ -22,7 +22,7 @@ function mostrar() {
   localStorage.setItem("tipusCalculadora", tipus);
 
   if (tipus == "normal") {
-    window.location.href = "/html/calculadora.html";
+    window.location.href = "calculadora.html";
   } else if (tipus == "cientifica") {
     window.location.href = "/html/calculadoraCientifica.html";
   }
