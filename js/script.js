@@ -22,9 +22,9 @@ function mostrar() {
   localStorage.setItem("tipusCalculadora", tipus);
 
   if (tipus == "normal") {
-    window.location.href = `/html/calculadora.html?tipus=${tipus}`;
+    window.location.href = "/html/calculadora.html";
   } else if (tipus == "cientifica") {
-    window.location.href = `/html/calculadoraCientifica.html?tipus=${tipus}`;
+    window.location.href = "/html/calculadoraCientifica.html";
   }
 
   alert("S'ha guardat el nom i el tipus de calculadora");
