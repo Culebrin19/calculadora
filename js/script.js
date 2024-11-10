@@ -77,7 +77,6 @@ function calcular() {
 
   document.getElementById("resultat").value = resultat;
 
-  // canviarTorn();
 }
 
 function mostrarResultat() {
