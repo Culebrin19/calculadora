@@ -121,10 +121,17 @@ function mostrarResultat() {
 // }
 
 function potencia(){
-  let mostrar = document.getElementById("resultat").value;
+  let mostrar = document.getElementById("resultat");
   let numero = parseFloat(mostrar.value);
 
   mostrar.value = Math.pow(numero, 2);
+}
+
+function realQuadrada(){
+  let mostrar = document.getElementById("resultat");
+  let numero = parseFloat(mostrar.value);
+
+  mostrar.value = Math.sqrt(numero);
 }
 
 function tractarUn() {
@@ -326,12 +333,6 @@ function tractarZero() {
   }
 }
 
-
-
-// function resultat(){
-//   pantalla = document.getElementById("resultat");
-//   pantalla.value = resultat;
-// }
 
 function esborrar() {
   operador1 = "";
