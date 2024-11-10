@@ -31,8 +31,10 @@
     <form action="">
       <label for="nom">Fica tel teu nom</label><br>
       <input type="text" id="nom" name="nom"><br>
-      <label for="tipusCalculadora">Selecciona la calculadora que vols</label><br>
-      <input type="text" id="tipusCalculadora" name="tipusCalculadora" placeholder="normal o cientifica">
+      <select id="tipusCalculadora">
+        <option value="normal">Normal</option>
+        <option value="cientifica">Científica</option>
+    </select>
       <button type="button" onclick="mostrar()">Enviar</button>
     </form>
 </body> 
