@@ -7,21 +7,23 @@ var valorInicial = 0;
 
 
 
-// var operand1 = "0";
+var operand1 = "0";
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   operand1 = "0";
-//   document.getElementById("resultat").value = operand1;
-// });
+document.addEventListener("DOMContentLoaded", function () { // Imprimeix zero res mes carregar la pàgina
+  operand1 = "0";
+  document.getElementById("resultat").value = operand1;
+});
 
 
 function mostrar() {
-  const tipus = document.getElementById("tipusCalculadora").value;
-  const nom = document.getElementById("nom").value;
+  const tipus = document.getElementById("tipusCalculadora").value;  // agafa el tipus de calculadora que s'ha escrit
+  const nom = document.getElementById("nom").value; // nom d'usuari
 
+  // crea un localStorage per a guardar els valors
   localStorage.setItem("nomUsuari", nom);
   localStorage.setItem("tipusCalculadora", tipus);
 
+  // depenent del tipus, porta a una pagina o una altra
   if (tipus == "normal") {
     window.location.href = "/html/calculadora.html";
   } else if (tipus == "cientifica") {
@@ -32,30 +34,18 @@ function mostrar() {
 }
 
 
-function mostrarZero() {
-  document.getElementById("resultat").value = valorInicial; // MIRAR ON FICAR-HO DINS D'UNA FUNCIO
-
-}
-
-// errors();
-function errors(missatge) {
-  // let tornActual = operador1;
-  // // document.getElementById("errors").value = "Prova d'error";
-  // if(tornActual.length>5){
-  //   document.getElementById("errors").value = "Error, massa dígits";
-  // }
+function errors(missatge) { // li arriba per parametre el missatge d'error i mostra el missatge
   document.getElementById("errors").innerText = missatge + ",fes enter a la URL per a poder continuar";
 }
 
-function opcio(parametreOperacio) {
+function opcio(parametreOperacio) { // li arriba per paramtre el valor que hia ficat dins de les funcions de opcio(), per exemple opcio("+") envia +
   operacio = parametreOperacio;
-  torn = !torn;
-  // document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
+  torn = !torn; // canvia el torn 
 }
 
 
-function calcular() { // Mirar que ficar en les condicions, perque no igualo cap valor
-  let numero1 = parseFloat(operador1);
+function calcular() { 
+  let numero1 = parseFloat(operador1);  // agafa el valor de l'operador 1 i el converteix a float
   let numero2 = parseFloat(operador2);
 
   // NO ACABA DE FUNCIONAR AMB IF
@@ -70,7 +60,7 @@ function calcular() { // Mirar que ficar en les condicions, perque no igualo cap
   //   resultat = numero1 / numero2;
   // }
 
-  switch (operacio) {
+  switch (operacio) { // segons el cas, fa una cosa o una altra
     case "+":
       resultat = numero1 + numero2;
       break;
@@ -87,46 +77,23 @@ function calcular() { // Mirar que ficar en les condicions, perque no igualo cap
 
   document.getElementById("resultat").value = resultat;
 
-  // canviarTorn();
 }
 
 function mostrarResultat() {
-  calcular();
+  calcular(); // crida a la funcio de dalt
   torn = true;  // per a que comenci amb el primer operador
-  operacio = "";
+  operacio = "";  // li esborro el cotingut de l'operacio
 }
 
-
-// function canviarTorn() {
-//   // MIRAR COM INDICAR-LI A QUIN TIPUS D'OPERACIO ES FA CLICK
-//   if (operacio == "+") {
-//     torn = !torn;
-//     document.getElementById("errors").value = "Prova d'error sumar";
-//     // resultat = operador1 + operador2;
-//   } else if (operacio == "-") {
-//     torn = !torn;
-//     document.getElementById("errors").value = "Prova d'error restar";
-//     resultat = operador1 - operador2;
-//   } else if (operacio == "*") {
-//     torn = !torn;
-//     document.getElementById("errors").value = "Prova d'error mutiplicar";
-//     resultat = operador1 * operador2;
-//   } else if (operacio == "/") {
-//     torn = !torn;
-//     document.getElementById("errors").value = "Prova d'error dividir";
-//     resultat = operador1 / operador2;
-//   }
-//   // torn = !torn; // mirara si canvia el valor de torn al contrari
-//   document.getElementById("resultat").value = resultat;
-// }
 
 function potencia(){
-  let mostrar = document.getElementById("resultat");
-  let numero = parseFloat(mostrar.value);
+  let mostrar = document.getElementById("resultat");  
+  let numero = parseFloat(mostrar.value); // guarda el valor de la pantalla a numero
 
-  mostrar.value = Math.pow(numero, 2);
+  mostrar.value = Math.pow(numero, 2);  // eleva el numero a 2 hi ho mostra
 }
 
+// lo mateix que l'anterior funcio, pero fa la arrel quadrada
 function realQuadrada(){
   let mostrar = document.getElementById("resultat");
   let numero = parseFloat(mostrar.value);
@@ -135,22 +102,22 @@ function realQuadrada(){
 }
 
 function tractarUn() {
-  if (torn) {
-    if (operador1.length >= 6) {
+  if (torn) { // torn per defecte a true
+    if (operador1.length >= 6) {  // en el cas de ser més llarg o igual a 6, envia el missatge a la funcio errors
       errors("Massa digits");
       return;
     }
-    operador1 = operador1 + "1";
-    resultat = document.getElementById("resultat").value = operador1;
+    operador1 = operador1 + "1";  // en el cas de que no doni error, concatena el numero 1 
+    resultat = document.getElementById("resultat").value = operador1; // mostro el valor per pantalla
     document.getElementById("resultat").value = operador1 + " " + operacio;
-  } else {
+  } else {  // lo mateix que l'anterior pero amb l'operador 2
     if (operador2.length >= 6) {
       errors("Massa digits");
       return;
     }
     operador2 = operador2 + "1";
     resultat = document.getElementById("resultat").value = operador2;
-    document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2;
+    document.getElementById("resultat").value = operador1 + " " + operacio + " " + operador2; // concateno operador1, operacio i operador2
   }
 }
 
@@ -334,16 +301,16 @@ function tractarZero() {
 }
 
 
-function esborrar() {
+function esborrar() { // fico que totes les variables estiguin buides
   operador1 = "";
   operador2 = "";
   operacio = "";
-  torn = true;
+  torn = true;  // torn per defecte, operador1
 
-  document.getElementById("resultat").value = "0";
+  document.getElementById("resultat").value = "0";  // mostro zero per pantalla
 }
 
-function esborrarUltim() {
+function esborrarUltim() {  // fa casi lo mateix que la anterior funcio, solament que esborra l'ultim numero
   if (torn) {
     operador1=operador1.slice(0, -1);
     document.getElementById("resultat").value = operador1;
@@ -353,11 +320,11 @@ function esborrarUltim() {
   }
 }
 
-function goBack() {
+function goBack() { // tira enrere en l'historial
   window.history.back();
 }
 
-function goForward() {
+function goForward() {  // tira endavant en l'historial
   window.history.forward();
 }
 

@@ -52,3 +52,11 @@ button{
 .esborrarNormal{
     margin-left: 10rem;
 }
+
+#normal{
+    display: none;
+}
+
+#cientifica{
+    display: none;
+}   
