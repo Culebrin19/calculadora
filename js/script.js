@@ -91,29 +91,6 @@ function mostrarResultat() {
 }
 
 
-// function canviarTorn() {
-//   // MIRAR COM INDICAR-LI A QUIN TIPUS D'OPERACIO ES FA CLICK
-//   if (operacio == "+") {
-//     torn = !torn;
-//     document.getElementById("errors").value = "Prova d'error sumar";
-//     // resultat = operador1 + operador2;
-//   } else if (operacio == "-") {
-//     torn = !torn;
-//     document.getElementById("errors").value = "Prova d'error restar";
-//     resultat = operador1 - operador2;
-//   } else if (operacio == "*") {
-//     torn = !torn;
-//     document.getElementById("errors").value = "Prova d'error mutiplicar";
-//     resultat = operador1 * operador2;
-//   } else if (operacio == "/") {
-//     torn = !torn;
-//     document.getElementById("errors").value = "Prova d'error dividir";
-//     resultat = operador1 / operador2;
-//   }
-//   // torn = !torn; // mirara si canvia el valor de torn al contrari
-//   document.getElementById("resultat").value = resultat;
-// }
-
 function potencia(){
   let mostrar = document.getElementById("resultat");
   let numero = parseFloat(mostrar.value);
@@ -133,9 +110,6 @@ function tractarUn() {
     if (operador1.length >= 6) {
       errors("Massa digits");
       return;
-    }
-    if(operador1=="++" || operador1=="--" || operador1=="**" || operador1=="//"){
-      errors("Systax error");
     }
     operador1 = operador1 + "1";
     resultat = document.getElementById("resultat").value = operador1;
