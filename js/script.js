@@ -24,9 +24,9 @@ function mostrar() {
 
   // depenent del tipus, porta a una pagina o una altra
   if (tipus == "normal") {
-    window.location.href = "/html/calculadora.html";
+    window.location.href = "html/calculadora.html";
   } else if (tipus == "cientifica") {
-    window.location.href = "/html/calculadoraCientifica.html";
+    window.location.href = "html/calculadoraCientifica.html";
   } else {
     alert("Tipus de calculadora incorrecta");
   }
